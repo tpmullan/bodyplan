@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  rating: 
+  overview_video: 
+  overview_text: 
+  cover_photo: 
+  price: 
+  difficulty: 
+  equipment_required: 
+  session_intervals: 
+  trending: false
+
+two:
+  name: 
+  rating: 
+  overview_video: 
+  overview_text: 
+  cover_photo: 
+  price: 
+  difficulty: 
+  equipment_required: 
+  session_intervals: 
+  trending: false

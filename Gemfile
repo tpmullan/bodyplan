@@ -47,7 +47,11 @@ gem 'geocoder'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# User management
 gem "devise"
+gem 'cancancan', '~> 1.10'
+
+# Api stuff
 gem 'httparty'
 
 group :development, :test do

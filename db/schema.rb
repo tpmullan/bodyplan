@@ -11,7 +11,50 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150517204622) do
+ActiveRecord::Schema.define(version: 20150518014104) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "program_id"
+    t.text     "comment"
+    t.string   "tag_line"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.integer  "trainer_id"
+    t.string   "name"
+    t.integer  "rating"
+    t.string   "overview_video_file_name"
+    t.string   "overview_video_content_type"
+    t.integer  "overview_video_file_size"
+    t.datetime "overview_video_updated_at"
+    t.text     "overview_text"
+    t.string   "cover_photo_file_name"
+    t.string   "cover_photo_content_type"
+    t.integer  "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
+    t.integer  "price"
+    t.string   "difficulty"
+    t.string   "equipment_required"
+    t.integer  "session_intervals"
+    t.boolean  "trending"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "programs", ["trainer_id"], name: "index_programs_on_trainer_id"
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "program_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "subscriptions", ["program_id"], name: "index_subscriptions_on_program_id"
+  add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
