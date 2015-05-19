@@ -1,0 +1,10 @@
+language: ruby
+cache: bundler
+bundler_args: --without development
+rvm:
+  - 2.2.2
+deploy:
+  provider: heroku
+  api_key: 435deb1f-4684-456d-92c4-f3fbefc659b9
+  app: bodyplanfitness
+  
