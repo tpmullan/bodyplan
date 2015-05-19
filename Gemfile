@@ -50,14 +50,14 @@ gem "devise"
 gem 'cancancan', '~> 1.10'
 
 # Api stuff
-gem 'httparty', '~> 0.13.4'
+gem 'httparty', '~> 0.13.5'
 
 #logging
 gem 'le'
 
 group :production do
   #database
-  gem 'pg'
+  gem 'pg', '~> 0.18.2'
   
   #heroku required gems
   gem 'rails_12factor'
@@ -67,7 +67,7 @@ end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'byebug', '~> 5.0.0'
   gem "better_errors"
   gem 'dotenv-rails'
   gem 'binding_of_caller'
