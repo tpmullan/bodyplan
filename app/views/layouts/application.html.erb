@@ -7,8 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+    
+    <div class="container-fluid">
+      <div class="col-xs-12 notification-header">
+        <%= render 'application/flash_alerts' %>
+      </div>
 
-<%= yield %>
+      <div class="row">
+        <div class="col-md-12">
+          <%= yield %>
+        </div>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 </html>

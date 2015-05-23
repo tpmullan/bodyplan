@@ -1,0 +1,16 @@
+<script>
+$(document).ready(function() {
+<% if flash[:error] -%>
+  noticeMessage('<%= h flash[:error] %>', 'danger');
+<% elsif flash[:notice] -%>
+  noticeMessage('<%= h flash[:notice] %>', 'info');
+<% elsif flash[:success] -%>
+  noticeMessage('<%= h flash[:success] %>', 'success');
+<% elsif flash[:warning] -%>
+  noticeMessage('<%= h flash[:warning] %>', 'warning');
+<% elsif flash[:alert] -%>
+  noticeMessage('<%= h flash[:alert] %>', 'warning');
+<% end %>
+});
+</script>
+
