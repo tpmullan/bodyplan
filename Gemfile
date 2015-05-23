@@ -74,13 +74,14 @@ group :development, :test do
   gem "pry"
   gem 'pry-rails'
   gem 'pry-stack_explorer'
-  
+    
   #testing 
   gem 'rspec-rails'
   gem 'factory_girl_rails'
   gem 'capybara'
   gem 'database_cleaner'
-  
+  gem 'faker'
+
   #database
   gem 'sqlite3'
 
