@@ -1,6 +1,6 @@
 class AddFieldsToUser < ActiveRecord::Migration
   def change
-    add_column :users, :user_type, :integer
+    add_column :users, :user_type, :integer, default: 2
     add_column :users, :first_name, :string
     add_column :users, :last_name, :string
     add_column :users, :bio, :text

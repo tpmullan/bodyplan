@@ -9,4 +9,17 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  def role
+    case user_type
+    when 0
+      :admin
+    when 1
+      :trainer
+    when 2
+      :customer
+    else
+      :public
+    end
+  end
 end

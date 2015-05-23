@@ -28,5 +28,23 @@ class Ability
     #
     # See the wiki for details:
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
+
+    @user = user || User.new
+    send @user.role
+  end
+  
+  def admin
+    can :manage, :all
+  end
+
+  def trainer
+    can :manage, User, id: @user.id
+  end
+
+  def customer
+    can :manage, User, id: @user.id
+  end
+
+  def public
   end
 end
