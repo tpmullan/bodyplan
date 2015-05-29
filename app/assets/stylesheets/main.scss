@@ -1,0 +1,58 @@
+$light-blue: #0CAFFF;
+$text-color: #858585;
+
+
+
+.navbar-default {
+  background-color: #fff;
+ .navbar-nav > li > a {
+   color: $text-color;
+ }
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a {
+  color: #616161;
+}
+
+.blue-font {
+  color: $text-color !important;
+}
+
+
+footer {
+  p > a , p > a:visited{
+    color: $light-blue;
+    
+  }
+  h4 {
+    font-size: 2.2em;
+  }
+  font-size: 10px;
+  border-top: 1px solid #979797;
+  text-align: center;
+  .fa-stack {
+    color: #B2B2B2;
+    font-size: 1.5em;
+    &:hover {
+      background-color: transparent;
+      color: gray;
+    }
+    height: 30px;
+    width: 30px;
+  }
+  .table {
+    width: 40%;
+    margin: 0 auto 20px auto;
+    td {
+      font-size: 1.2em;
+      border-top: 0 !important;
+      padding: 2px !important;
+      a:hover {
+        background-color: transparent;
+        font-weight: 600;
+        color: $text-color;
+        text-decoration: none;
+      }
+    }
+  }
+}
+

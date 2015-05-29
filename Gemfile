@@ -18,6 +18,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'chart-js-rails'
 
+#font
+gem 'font-awesome-rails'
+
 # For file upload
 gem "paperclip", "~> 4.0"
 
@@ -47,7 +50,7 @@ gem 'geocoder'
 # gem 'capistrano-rails', group: :development
 
 # User management
-gem "devise"
+gem "devise", '~> 3.5.1'
 gem 'cancancan', '~> 1.10'
 
 # Api stuff

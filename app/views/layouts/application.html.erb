@@ -4,24 +4,23 @@
   <title>Bodyplan</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<%= render 'layouts/header' %>
   <div id="wrapper">
-    
     <div class="container-fluid">
       <div class="col-xs-12 notification-header">
         <%= render 'application/flash_alerts' %>
       </div>
-
       <div class="row">
         <div class="col-md-12">
           <%= yield %>
         </div>
       </div>
-
     </div>
   </div>
-
+<%= render 'layouts/footer' %>
 </body>
 </html>
