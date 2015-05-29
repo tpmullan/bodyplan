@@ -22,4 +22,13 @@ class User < ActiveRecord::Base
       :public
     end
   end
+
+  def name
+    if first_name || last_name
+      "#{first_name} #{last_name}" 
+    else
+      email
+    end
+  end
+
 end
