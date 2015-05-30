@@ -30,6 +30,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.2.16'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+# Form generation
+gem 'simple_form', '~> 3.1'
 
 # Location information
 # gem 'gmaps4rails'
@@ -64,8 +66,7 @@ group :production do
   gem 'pg', '~> 0.18.2'
   
   #heroku required gems
-  gem 'rails_12factor'
-  
+  gem 'rails_12factor'  
   
 end
 
