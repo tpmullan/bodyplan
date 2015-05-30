@@ -1,15 +1,25 @@
 $light-blue: #0CAFFF;
 $text-color: #858585;
+$grayish: #474747;
+$light-gray: #616161;
 
+@import "breakpoint";
 
-
+.nav {
+  font-size: 13px;
+}
+.navbar {
+  margin-bottom: 0;
+}
 .navbar-default {
   background-color: #fff;
- .navbar-nav > li > a {
+
+  .navbar-nav > li > a {
    color: $text-color;
  }
 }
 .dropdown-menu > li > a:hover, .dropdown-menu > li > a {
+  font-size: 1.3em;
   color: #616161;
 }
 
@@ -56,3 +66,129 @@ footer {
   }
 }
 
+//homepage
+#main {
+  background-image: url(desktop-background.jpg);
+  @include breakpoint(1px 600px) {
+    background-image: url(mobile-background.jpg);
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 450px;
+  text-align: center;
+  color: white;
+  h1 {
+    font-size: 7em;
+    position: relative;
+    margin-top: 150px;
+  }
+  h2 {
+    color: #D4D2D2;
+    font-size: 3.4em;
+  }
+}
+
+.programs {
+  margin: 0;
+  background-color: #F6F3F3;
+  h3 {
+    color: $grayish;
+    text-align: center;
+  }
+  .individual-programs > div {
+    background-color: #fff;
+    padding: 0;
+    border-radius: 5px;
+    width: 29%;
+    min-height: 245px;
+    margin: 1% 2%;
+    .program-header{
+      height: 160px;
+      background-image: url('program.jpg');
+      background-position: center;
+      background-size: cover;
+    }
+    .program-content {
+      h4 {
+        color: $light-blue;
+        font-size: 2.5em;
+      }
+      table {
+        td{
+          font-size: 1.2em;
+        }
+        td:nth-child(2){
+          width: 50%;
+          text-align: center;
+        }
+        td:nth-child(3),td:nth-child(1) {
+          width: 25%;
+        }
+        td:nth-child(3) {
+          text-align: right;
+          padding-right: 15px;
+        }
+        td:nth-child(1){
+          padding-left: 15px;
+        }
+        width: 100%;
+      }
+      height: 75px;
+    }
+  }
+}
+
+.standard-button {
+  background-color: $light-blue;
+  border: 0;
+  border-radius: 3px;
+  padding: 10px;
+  color: white;
+  font-size: 2.5em;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#selling-points {
+  img {
+    height: 100px;
+    margin: 25px 0 10px 0;
+  }
+  h4{
+    font-size: 2.5em;
+    margin-top: 20px;
+    color: $grayish;
+  }
+  h5 {
+    font-size: 2em;
+    color: $grayish;
+  }
+  p {
+    color: $light-gray;
+    font-size: 1.5em;
+    margin-bottom: 40px;
+  }
+}
+
+.difficulty-easy, .difficulty-medium, .difficulty-hard {
+  background-image: url('difficulty-sprite.png');
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: middle;
+  height: 13px;
+  width: 51px;
+}
+
+.difficulty-medium {
+  background-position: 0 -13px;
+
+}
+.difficulty-hard {
+  background-position: 0 -26px;
+}

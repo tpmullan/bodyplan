@@ -18,7 +18,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'chart-js-rails'
 
-#font
+#font/style
 gem 'font-awesome-rails'
 
 # For file upload

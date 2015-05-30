@@ -1,0 +1,43 @@
+<div class="container-fluid" id="main">
+  <h1>Fitness programs for everyone</h1>
+  <h2>Learn from the worlds best trainers</h2>
+</div>
+<div class="programs col-xs-12">
+  <h3>Trending Programs</h3>
+  <div class="container individual-programs">
+    <!-- TODO NEEDS TO BE UPDATED WITH CORRECT LOOP ONCE MODEL IS COMPLETED AND PARTIAL UPDATED -->
+    <% for i in 1..6 do %>
+      <%= render 'dashboard/individual_program' %>
+    <% end %>
+    <!-- END OF LOOP -->
+  </div>
+  <div class="col-xs-12 col-md-4 col-md-offset-4">
+    <%= button_to 'VIEW ALL PROGRAMS', root_path, class: 'standard-button center-block' %>
+  </div>
+</div>
+<div class="container">
+  <div class="text-center" id="selling-points">
+    <div class="col-xs-12">
+      <h4>Short Bullet Point</h4>
+      <h5>Some sentence about how awesome we are</h5>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag 'golden-cup.png' %>
+      <h5>Awesome Trainers</h5>
+      <p>You are tired of getting advice from the random creeper in the gym, the girl in a ponzi scheme or your friend who once played varsity sports in the glory days.</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag 'money-back.png' %>
+      <h5>Money Back Guarantee</h5>
+      <p>You bought a program and realize it is not for you. No problem. If you do not like a program you purchased, we will give you a full refund within 30 days.</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <%= image_tag 'infinity.png' %>
+      <h5>Unlimited</h5>
+      <p>Your program never expires. You have lifetime access to the program and all future updates. Follow it on your PC, Mac, phone or tablet.</p>
+    </div>
+  </div>
+</div>
+<div>
+  
+</div>
