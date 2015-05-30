@@ -1,6 +1,48 @@
-<h1>Editing User</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="row">
+  <div class="col-md-:9">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <%= image_tag avatar_url(@user, 120), alt: '', class: "img-circle avatar avatar-original", size: '120' %>
+            <ul class="nav nav-stacked" role="tablist" id="myTab">
+              <li role="presentation" class="active"><a href="#profile" aria-controls="edit" role="tab" data-toggle="tab">Edit Profile</a></li>
+              <li role="presentation"><a href="#program" aria-controls="program" role="tab" data-toggle="tab">Recommend a program</a></li>
+              <li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Change Password</a></li>
+            </ul>             
+          </div>
+          <div class="col-md-7">
+            <div class="tab-content">
+              <div role="tabpanel" class="tab-pane active" id="profile">
+                <%= render 'form' %>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="program">
+                <h1>Help us suggest the best programs.</h1><small>Trainers can view this info.</small>
+                <%= simple_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
+                  <%= f.input :fitness_level %>
+                  <%= f.input :equipment_access, label: 'Access to equipment' %>
+                  <%= f.input :ideal_session, label: 'Ideal time / session' %>
+                  <%= f.input :goal %>
+                  <%= f.button :submit %>
+                <% end %>
+              </div>
+              <div role="tabpanel" class="tab-pane" id="password">
+                <h1>Change Password</h1>
+                <%= simple_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
+                  <%= f.input :password %>
+                  <%= f.input :password_confirmation %>
+                  <%= f.button :submit %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <hr><%= link_to '<i class="glyphicon glyphicon-arrow-left"></i> Profile'.html_safe, @user, class: 'btn btn-default pull-right' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -20,12 +20,11 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
-  login_user
-  
   def create_user(user_hash)
     user = User.new user_hash
     user.skip_confirmation!
     user.save!
+    sign_in user
     return user
   end
 
@@ -66,6 +65,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe "GET #new" do
     it "assigns a new user as @user" do
+      user = create_user(valid_attributes)
       get :new, {}
       expect(assigns(:user)).to be_a_new(User)
     end
@@ -129,13 +129,13 @@ RSpec.describe UsersController, type: :controller do
 
       it "assigns the requested user as @user" do
         user = create_user(valid_attributes)
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
+        put :update, {:id => user.to_param, :user => valid_attributes}
         expect(assigns(:user)).to eq(user)
       end
 
       it "redirects to the user" do
         user = create_user(valid_attributes)
-        put :update, {:id => user.to_param, :user => valid_attributes}, valid_session
+        put :update, {:id => user.to_param, :user => valid_attributes}
         expect(response).to redirect_to(user)
       end
     end
@@ -143,13 +143,13 @@ RSpec.describe UsersController, type: :controller do
     context "with invalid params" do
       it "assigns the user as @user" do
         user = create_user(valid_attributes)
-        put :update, {:id => user.to_param, :user => invalid_attributes}, valid_session
+        put :update, {:id => user.to_param, :user => invalid_attributes}
         expect(assigns(:user)).to eq(user)
       end
 
       it "re-renders the 'edit' template" do
         user = create_user(valid_attributes)
-        put :update, {:id => user.to_param, :user => invalid_attributes}, valid_session
+        put :update, {:id => user.to_param, :user => invalid_attributes}
         expect(response).to render_template("edit")
       end
     end
@@ -159,13 +159,13 @@ RSpec.describe UsersController, type: :controller do
     it "destroys the requested user" do
       user = create_user(valid_attributes)
       expect {
-        delete :destroy, {:id => user.to_param}, valid_session
+        delete :destroy, {:id => user.to_param}
       }.to change(User, :count).by(-1)
     end
 
     it "redirects to the users list" do
       user = create_user(valid_attributes)
-      delete :destroy, {:id => user.to_param}, valid_session
+      delete :destroy, {:id => user.to_param}
       expect(response).to redirect_to(users_url)
     end
   end
