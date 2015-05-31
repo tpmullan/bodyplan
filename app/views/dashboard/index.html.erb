@@ -5,11 +5,7 @@
 <div class="programs col-xs-12">
   <h3>Trending Programs</h3>
   <div class="container individual-programs">
-    <!-- TODO NEEDS TO BE UPDATED WITH CORRECT LOOP ONCE MODEL IS COMPLETED AND PARTIAL UPDATED -->
-    <% for i in 1..6 do %>
-      <%= render 'dashboard/individual_program' %>
-    <% end %>
-    <!-- END OF LOOP -->
+      <%= render @trending %>
   </div>
   <div class="col-xs-12 col-md-4 col-md-offset-4">
     <%= button_to 'VIEW ALL PROGRAMS', root_path, class: 'standard-button center-block' %>

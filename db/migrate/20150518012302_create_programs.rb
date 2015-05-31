@@ -3,15 +3,15 @@ class CreatePrograms < ActiveRecord::Migration
     create_table :programs do |t|
       t.references :trainer, index: true, foreign_key: true
       t.string :name
-      t.integer :rating
+      t.decimal :rating
       t.attachment :overview_video
       t.text :overview_text
       t.attachment :cover_photo
-      t.integer :price
+      t.decimal :price
       t.string :difficulty
       t.string :equipment_required
       t.integer :session_intervals
-      t.boolean :trending
+      t.boolean :trending, default: false
 
       t.timestamps null: false
     end

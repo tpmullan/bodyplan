@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render 'layouts/header' %>
+<%= render 'application/header' %>
   <div id="wrapper">
     <div class="container-fluid">
       <div class="col-xs-12 notification-header">
@@ -16,6 +16,9 @@
       </div>
     </div>
   </div>
+
+<%= yield %>
+
 <%= render 'application/footer' %>
 </body>
 </html>

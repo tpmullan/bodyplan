@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150523010702) do
   create_table "programs", force: :cascade do |t|
     t.integer  "trainer_id"
     t.string   "name"
-    t.integer  "rating"
+    t.decimal  "rating"
     t.string   "overview_video_file_name"
     t.string   "overview_video_content_type"
     t.integer  "overview_video_file_size"
@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 20150523010702) do
     t.string   "cover_photo_content_type"
     t.integer  "cover_photo_file_size"
     t.datetime "cover_photo_updated_at"
-    t.integer  "price"
+    t.decimal  "price"
     t.string   "difficulty"
     t.string   "equipment_required"
     t.integer  "session_intervals"
-    t.boolean  "trending"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.boolean  "trending",                    default: false
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   add_index "programs", ["trainer_id"], name: "index_programs_on_trainer_id"
