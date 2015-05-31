@@ -53,6 +53,7 @@ gem 'geocoder'
 
 # User management
 gem "devise", '~> 3.5.1'
+gem "omniauth-google-oauth2"
 gem 'cancancan', '~> 1.10'
 
 # Api stuff
