@@ -68,9 +68,9 @@ footer {
 
 //homepage
 #main {
-  background-image: url(desktop-background.jpg);
+  background-image: image-url('desktop-background.jpg');
   @include breakpoint(1px 600px) {
-    background-image: url(mobile-background.jpg);
+    background-image: image-url('mobile-background.jpg');
   }
   background-repeat: no-repeat;
   background-size: cover;
@@ -176,7 +176,7 @@ footer {
 }
 
 .difficulty-easy, .difficulty-medium, .difficulty-hard {
-  background-image: url('difficulty-sprite.png');
+  background-image: image-url('difficulty-sprite.png');
   background-repeat: no-repeat;
   display: inline-block;
   vertical-align: middle;
