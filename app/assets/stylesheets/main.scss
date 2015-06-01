@@ -143,6 +143,20 @@ footer {
 
 .line-divider {
   border: 1px solid #E4E4E4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.user-thumbnail {
+  height: 44px;
+  width: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+.margin-bottom15 {
+  margin-bottom: 15px;
 }
 
 .standard-button {

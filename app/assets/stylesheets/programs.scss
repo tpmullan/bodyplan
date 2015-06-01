@@ -8,13 +8,21 @@
   font-family: Helvetica Neue, Helvetica, Arial;
 }
 
+#overview {
+  background-color: #fff;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
 #pitch {
   font-family: Helvetica Neue, Helvetica, Arial;
+  padding: 0 13px;
   font-weight: 300;
   border-radius: 5px;
   background-color: #fff;
   span, p {
-    font-size: 1.6em;
+    font-size: 16px;
   }
   img {
     margin-right: 10px;
@@ -22,9 +30,12 @@
   h5 {
     font-size: 2em;
     font-weight: 400;
+    display: inline-block;
   }
   button {
     height: 55px;
-    width: 90%;
+  }
+  a {
+    color: $light-blue;
   }
 }
