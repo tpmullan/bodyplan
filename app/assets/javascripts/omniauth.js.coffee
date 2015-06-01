@@ -1,8 +1,9 @@
 jQuery ->
-  $.ajax
-    url: 'https://apis.google.com/js/api:client:plus.js?onload=gpAsyncInit'
-    dataType: 'script'
-    cache: true
+  if $('.omb_login').size() > 0
+    $.ajax
+      url: 'https://apis.google.com/js/api:client:plus.js?onload=gpAsyncInit'
+      dataType: 'script'
+      cache: true
 
 window.gpAsyncInit = ->
   gapi.load 'auth2', ->
