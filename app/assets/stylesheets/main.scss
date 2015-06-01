@@ -1,8 +1,3 @@
-$light-blue: #0CAFFF;
-$text-color: #858585;
-$grayish: #474747;
-$light-gray: #616161;
-
 @import "breakpoint";
 
 .nav {
@@ -25,6 +20,14 @@ $light-gray: #616161;
 
 .blue-font {
   color: $text-color !important;
+}
+
+.link-color {
+  color: $light-blue;
+  &:hover {
+    color: darken($light-blue, 5%);
+    text-decoration: none;
+  }
 }
 
 
@@ -91,7 +94,7 @@ footer {
 
 .programs {
   margin: 0;
-  background-color: #F6F3F3;
+  background-color: $background-color;
   h3 {
     color: $grayish;
     text-align: center;
@@ -138,6 +141,24 @@ footer {
   }
 }
 
+.line-divider {
+  border: 1px solid #E4E4E4;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.user-thumbnail {
+  height: 44px;
+  width: 44px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+
+.margin-bottom15 {
+  margin-bottom: 15px;
+}
+
 .standard-button {
   background-color: $light-blue;
   border: 0;
@@ -174,6 +195,29 @@ footer {
     margin-bottom: 40px;
   }
 }
+
+
+.font-18 {
+  font-size: 1.8em;
+}
+
+.font-30 {
+  font-size: 3em;
+}
+
+.font-25 {
+  font-size: 2.5em;
+}
+
+.font-24 {
+  font-size: 2.4em;
+}
+
+.font-17 {
+  font-size: 1.7em;
+}
+
+
 
 .difficulty-easy, .difficulty-medium, .difficulty-hard {
   background-image: image-url('difficulty-sprite.png');
