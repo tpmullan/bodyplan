@@ -1,7 +1,7 @@
 <div class="container text-center" style="margin-bottom: 12px;">
   <h2 class="font-30">90 Day Extreme Fat Loss</h2>
   <p class="font-18">For beginners and intermediates. Doesn’t require any equipment.</p>
-  <span class="difficulty-easy"></span> <span class="font-18">(<a href="#" class="link-color">4,480</a>)</span>
+  <span class="difficulty-<%= @program.difficulty %>"></span> <span class="font-18">(<a href="#" class="link-color">4,480</a>)</span>
 </div>
 <div class="container-fluid individual-program-overview ">
   <div class="container" style="margin-top: 20px;">
@@ -10,7 +10,7 @@
     </div>
     <div class="col-xs-12 col-sm-3" id="pitch" >
       <!-- TODO needs to be replace with button_to after a checkout page is created -->
-      <%= button_tag 'Buy for $xx.xx', class: 'font-24 standard-button center-block' %>
+      <%= button_tag "Buy for $#{@program.price}", class: 'font-24 standard-button center-block' %>
       <p><%= image_tag 'heart.png' %><span>30 day money back guarantee!</span></p>
       <p><%= image_tag 'infinity-small.png' %><span>Lifetime access, no exceptions!</span></p>
       <div class="line-divider col-xs-12"></div>
