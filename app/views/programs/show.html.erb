@@ -24,9 +24,39 @@
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2" id="overview">
       <h2 class="text-center font-25"> Program Overview</h2>
-      <p class="font-17">This program will get your body in FAT BURNING mode, speed up your metabolism and get processed foods out of your system! I will guide you through setting your personal goals, figuring out what foods to eat and how much, as well as workouts that will kick your butt into shape! After years as a professional athlete, I’ve combined some of the best principles that have worked for me and other elite athletes.
+      <!-- TODO need to make it so that the styling is correctly display when the user types in their paragraphs -->
+      <p class="font-17 margin-bottom20">This program will get your body in FAT BURNING mode, speed up your metabolism and get processed foods out of your system! I will guide you through setting your personal goals, figuring out what foods to eat and how much, as well as workouts that will kick your butt into shape! After years as a professional athlete, I’ve combined some of the best principles that have worked for me and other elite athletes.<br><br>
 
-        Whether you are a current athlete, haven’t worked out in a while or are a beginner, all levels will benefit from learning how to get your body moving in an entirely new way. My method of movement is probably different to what y... See full overview </p>
+        Whether you are a current athlete, haven’t worked out in a while or are a beginner, all levels will benefit from learning how to get your body moving in an entirely new way. My method of movement is probably different to what y... <a href="#">See full overview</a></p>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 program-section margin-bottom50" style="padding: 0;">
+      <div>
+        <table class="width-100">
+          <!-- EXAMPLE -->
+          <tr><th colspan="3">Section 1: Course and Instructor Introduction</th></tr>
+          <tr>
+            <td class="width-15 text-right">1</td>
+            <td style="padding-left: 15px;"><%= link_to 'Introduction' %></td>
+            <td class="width-15"><i class="fa fa-play-circle-o"></i>5:35</td>
+          </tr>
+          <tr>
+            <td class="width-15 text-right">2</td>
+            <td style="padding-left: 15px;"><%= link_to 'What Is Your Goal?' %></td>
+            <td class="width-15"><i class="fa fa-file-text-o"></i>Text</td>
+          </tr>
+          <!-- END OF EXAMPLE -->
+          
+          <!-- TODO for sections in course do -->
+          <tr><th colspan="3">Section #: TITLE</th></tr>
+          <!-- TODO for lessons in section do -->
+          <tr>
+            <td class="width-15 text-right">#</td>
+            <td style="padding-left: 15px;">LINK TO LESSON</td>
+            <!-- the icon class can either equal fa fa-file-text-o  or fa fa-play-circle-o -->
+            <td class="width-15"><i class="fa fa-file-text-o"></i>time/text</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

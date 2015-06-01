@@ -6,16 +6,28 @@
 .individual-program-overview {
   background-color: $background-color;
   font-family: Helvetica Neue, Helvetica, Arial;
+  a {
+    color: $light-blue;
+    &:hover {
+      color: darken($light-blue, 5%);
+      text-decoration: none;
+    }
+  }
 }
 
 #overview {
   background-color: #fff;
   margin-top: 15px;
   margin-bottom: 20px;
-  border-radius: 5px;
+  padding: 0 50px;
+  h2 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+  }
 }
 
 #pitch {
+ 
   font-family: Helvetica Neue, Helvetica, Arial;
   padding: 0 13px;
   font-weight: 300;
@@ -35,7 +47,36 @@
   button {
     height: 55px;
   }
-  a {
-    color: $light-blue;
+}
+
+.program-section {
+  margin-bottom: 50px;
+  i {
+    color: #B9B9B9;
+    font-size: 1.3em;
+    margin-right: 10px;
+  }
+  th {
+    color: #474747;
+    font-size: 1.8em;
+    font-weight: 300;
+    background-color: #EDEDED;
+    border: 1px solid lightgray;
+    height: 40px;
+    padding: 0 0 0 45px;
+  }
+  tr {
+    border: 1px solid lightgray;
+    td:nth-child(1){
+      color: #929090;
+    }
+    td:nth-child(3){
+      color: #757575;
+    }
+  }
+  td {
+    background-color: #fff;
+    height: 40px;
+    font-size: 1.6em;
   }
 }
