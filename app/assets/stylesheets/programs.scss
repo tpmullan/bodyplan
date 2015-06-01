@@ -1,0 +1,30 @@
+// Place all the styles related to the programs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.individual-program-overview {
+  background-color: $background-color;
+  font-family: Helvetica Neue, Helvetica, Arial;
+}
+
+#pitch {
+  font-family: Helvetica Neue, Helvetica, Arial;
+  font-weight: 300;
+  border-radius: 5px;
+  background-color: #fff;
+  span, p {
+    font-size: 1.6em;
+  }
+  img {
+    margin-right: 10px;
+  }
+  h5 {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  button {
+    height: 55px;
+    width: 90%;
+  }
+}
