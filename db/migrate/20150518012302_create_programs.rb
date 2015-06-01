@@ -1,7 +1,7 @@
 class CreatePrograms < ActiveRecord::Migration
   def change
     create_table :programs do |t|
-      t.references :trainer, index: true, foreign_key: true, references: :users
+      t.references :trainer, references: :users, index: true, foreign_key: true
       t.string :name
       t.decimal :rating
       t.attachment :overview_video
