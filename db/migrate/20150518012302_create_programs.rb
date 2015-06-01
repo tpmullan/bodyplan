@@ -1,7 +1,7 @@
 class CreatePrograms < ActiveRecord::Migration
   def change
     create_table :programs do |t|
-      t.references :trainer, references: :users, index: true, foreign_key: true
+      t.references :trainer, references: :users, index: true
       t.string :name
       t.decimal :rating
       t.attachment :overview_video
@@ -15,5 +15,7 @@ class CreatePrograms < ActiveRecord::Migration
 
       t.timestamps null: false
     end
+
+    add_foreign_key :programs, :users, column: :trainer_id
   end
 end
