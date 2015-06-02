@@ -4,7 +4,7 @@ module UsersHelper
     if !user.is_a? User
       default_url
     elsif user.profile_pic.present?
-      user.profile_pic_url
+      user.profile_pic.url
     else
       gravatar_id = Digest::MD5.hexdigest(user.email.downcase)
       "https://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}&d=#{CGI.escape(default_url)}"
