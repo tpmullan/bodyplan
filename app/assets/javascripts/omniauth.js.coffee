@@ -13,14 +13,15 @@ window.gpAsyncInit = ->
       cookiepolicy: 'single_host_origin'
 
     auth2.attachClickHandler $('.googleplus-login')[0], {}, ((googleUser) ->
-      if response and !response.error
+      if googleUser
          # google authentication succeed, now post data to server and handle data securely
          jQuery.ajax
            type: 'POST'
            url: '/users/auth/google_oauth2/callback'
            dataType: 'json'
-           data: response
+           data: googleUser.getAuthResponse()
            success: (json) ->
+             successNotice "Logged in with google"
              # response from server
              return
        else
