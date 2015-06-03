@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
   # relationships
+  has_many :identities
   has_many :subscriptions
   has_many :programs, through: :subscriptions
   has_many :comments
@@ -9,7 +10,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :lockable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
-  devise :omniauthable, :omniauth_providers => [:google_oauth2]
+  devise :omniauthable, :omniauth_providers => [:google_oauth2, :facebook, :twitter]
 
   has_attached_file :profile_pic, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "icons/profile.png"
   geocoded_by :current_sign_in_ip
@@ -17,22 +18,49 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
 
-  def self.from_omniauth(access_token)
-      data = access_token.info
-      user = User.find_by(email: data["email"])
-  
-      # Uncomment the section below if you want users to be created if they don't exist
-      unless user
-          user = User.new(first_name: data["first_name"],
-             last_name: data["last_name"],
-             email: data["email"],
-             password: Devise.friendly_token[0,20]
-          )
-          user.profile_pic = URI.parse(data["image"])
-          user.skip_confirmation!
-          user.save!
-      end
-      user
+  def twitter
+    identities.where( :provider => "twitter" ).first
+  end
+
+  def twitter_client
+    @twitter_client ||= Twitter.client( access_token: twitter.accesstoken )
+  end
+
+  def facebook
+    identities.where( :provider => "facebook" ).first
+  end
+
+  def facebook_client
+    @facebook_client ||= Facebook.client( access_token: facebook.accesstoken )
+  end
+
+  def instagram
+    identities.where( :provider => "instagram" ).first
+  end
+
+  def instagram_client
+    @instagram_client ||= Instagram.client( access_token: instagram.accesstoken )
+  end
+
+  def google_oauth2
+    identities.where( :provider => "google_oauth2" ).first
+  end
+
+  def google_oauth2_client
+    if !@google_oauth2_client
+      @google_oauth2_client = Google::APIClient.new(:application_name => 'HappySeed App', :application_version => "1.0.0" )
+      @google_oauth2_client.authorization.update_token!({:access_token => google_oauth2.accesstoken, :refresh_token => google_oauth2.refreshtoken})
+    end
+    @google_oauth2_client
+  end
+
+  def update_from_identity(identity)
+    identity.update_attribute( :user_id, self.id )
+    self.update(phone: identity.phone,
+                first_name: identity.first_name,
+                last_name: identity.last_name,
+                profile_pic: URI.parse(identity.image)
+               )
   end
 
   def role
