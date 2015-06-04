@@ -241,7 +241,17 @@ footer {
   width: 15%;
 }
 
+.lighter-gray {
+  color: #929090;
+}
 
+.font-light {
+  font-weight: 300;
+}
+
+.display-inline{
+  display: inline-block
+}
 
 .difficulty-easy, .difficulty-medium, .difficulty-hard {
   background-image: image-url('difficulty-sprite.png');
@@ -259,4 +269,5 @@ footer {
 .difficulty-hard {
   background-position: 0 -26px;
 }
+
 

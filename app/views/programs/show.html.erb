@@ -58,5 +58,75 @@
         </table>
       </div>
     </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2" id="reviews">
+      <h2 class="font-25 text-center">Reviews</h2>
+      <div class="ratings-chart">
+        
+      </div>
+      <!-- If ratings exist loop through each review  or else put the No reviews yet message-->
+      <!-- replace review.title, username, rating, review.content, and review.date with ruby methods -->
+      <!-- Example start -->
+      <div class="review">
+        <span class="stars-5"></span><h5 class="display-inline">Highly effective program!! </h5><span class="lighter-gray font-light">May 4, 2015</span>
+        <p class="lighter-gray">By <%= link_to "User Name" %></p>
+        <p>This program has changed my life. I’ve tried everything from crash diets, ‘no carb’ days, thousands of crunches, hours at the gym and I have been doing it all wrong. You will learn all the fundamentals and decide what works for you. Alex’s goal is for you to get in better shape, while maintaining a high caloric intake. I had no idea what the difference between a fat, carb or protein was. I thought calories were just calories! The workouts are really challenging. They are not like any other workout I have tried out on YouTube. I can feel everything tightening and my progress has been amazing! HIGHLY RECOMMEND THIS PROGRAM TO ANY BEGINNER!!  </p>
+      </div>
+      <div class="review">
+        <span class="stars-4"></span><h5 class="display-inline">Highly effective program!! </h5><span class="lighter-gray font-light">May 4, 2015</span>
+        <p class="lighter-gray">By <%= link_to "User Name" %></p>
+        <p>This program has changed my life. I’ve tried everything from crash diets, ‘no carb’ days, thousands of crunches, hours at the gym and I have been doing it all wrong. You will learn all the fundamentals and decide what works for you. Alex’s goal is for you to get in better shape, while maintaining a high caloric intake. I had no idea what the difference between a fat, carb or protein was. I thought calories were just calories! The workouts are really challenging. They are not like any other workout I have tried out on YouTube. I can feel everything tightening and my progress has been amazing! HIGHLY RECOMMEND THIS PROGRAM TO ANY BEGINNER!!  </p>
+      </div>
+      <!-- Example End -->
+      <!-- template start -->
+      <% if true %>
+          <div class="ratings-chart col-xs-12 col-sm-6 col-sm-offset-3">
+            <p class="text-center"><span class="starslarge-4"></span><span>(586)</span></p>
+            <p class="lighter-gray text-center">5.0 out of 5</p>
+            <table>
+              <tr>
+                <td>5 Star</td>
+                <td></td>
+                <td>586</td>
+              </tr>
+              <tr>
+                <td>4 Star</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>3 Star</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>2 Star</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1 Star</td>
+                <td></td>
+                <td>0</td>
+              </tr>
+            </table>
+          </div>
+          <div class="clearfix"></div>
+        <%= for x in 1..4 do %>
+          <div class="review">
+            <!-- span class can equal 1-5 for stars-1 ,stars-2, etc. -->
+            <span class="stars-2"></span><h5 class="display-inline">REVIEW TITLE</h5><span class="lighter-gray font-light">REVIEW DATE</span>
+            <p class="lighter-gray">By <%= link_to "USERNAME" %></p>
+            <p>REVIEW CONTENT</p>
+          </div>
+        <% end %>
+      <% end %>
+      
+      <!-- template end -->
+      <!-- No reviews Message start -->
+      <div>
+        <h3>No reviews yet. <%= link_to 'Write a Review' %></h3>
+      </div>
+      <!-- No Reviews Message End -->
+    </div>
   </div>
 </div>
