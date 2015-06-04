@@ -56,11 +56,11 @@ class User < ActiveRecord::Base
 
   def update_from_identity(identity)
     identity.update_attribute( :user_id, self.id )
-    self.update(phone: identity.phone,
-                first_name: identity.first_name,
-                last_name: identity.last_name,
-                profile_pic: URI.parse(identity.image)
-               )
+    self.phone= identity.phone
+    self.first_name= identity.first_name
+    self.last_name= identity.last_name
+    self.profile_pic = URI.parse(@identity.image)
+    self.save
   end
 
   def role

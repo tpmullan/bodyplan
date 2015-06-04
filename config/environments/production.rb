@@ -67,6 +67,10 @@ Rails.application.configure do
     enable_starttls_auto: true
   }
 
+  # Set production url for mailer
+  config.roadie.url_options = {host: ENV['APP_URL'], scheme: "https"}
+  config.action_mailer.default_url_options = { :host => ENV['APP_URL'] }
+  
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = 'http://assets.example.com'
 
