@@ -17,12 +17,14 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'chart-js-rails'
+gem 'videojs_rails', '~> 4.6.1'
 
 #font/style
 gem 'font-awesome-rails'
 
 # For file upload
 gem "paperclip", "~> 4.0"
+gem 'paperclip-av-transcoder'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'

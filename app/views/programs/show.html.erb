@@ -1,12 +1,14 @@
 <div class="container text-center" style="margin-bottom: 12px;">
-  <h2 class="font-30">90 Day Extreme Fat Loss</h2>
-  <p class="font-18">For beginners and intermediates. Doesn’t require any equipment.</p>
+  <h2 class="font-30"><%= @program.name %></h2>
+  <p class="font-18"><%= @program.equipment_required %></p>
   <span class="difficulty-<%= @program.difficulty %>"></span> <span class="font-18">(<a href="#" class="link-color">4,480</a>)</span>
 </div>
 <div class="container-fluid individual-program-overview ">
   <div class="container" style="margin-top: 20px;">
     <div class="col-xs-12 col-sm-8">
-
+      <%= videojs_rails sources: { mp4: asset_path(@program.overview_video.url) }, width:'100%', height:'400' do %>
+            Please enable <b>JavaScript</b> to see this content.
+      <%- end %>
     </div>
     <div class="col-xs-12 col-sm-3" id="pitch" >
       <!-- TODO needs to be replace with button_to after a checkout page is created -->
@@ -25,9 +27,7 @@
     <div class="col-xs-12 col-sm-8 col-sm-offset-2" id="overview">
       <h2 class="text-center font-25"> Program Overview</h2>
       <!-- TODO need to make it so that the styling is correctly display when the user types in their paragraphs -->
-      <p class="font-17 margin-bottom20">This program will get your body in FAT BURNING mode, speed up your metabolism and get processed foods out of your system! I will guide you through setting your personal goals, figuring out what foods to eat and how much, as well as workouts that will kick your butt into shape! After years as a professional athlete, I’ve combined some of the best principles that have worked for me and other elite athletes.<br><br>
-
-        Whether you are a current athlete, haven’t worked out in a while or are a beginner, all levels will benefit from learning how to get your body moving in an entirely new way. My method of movement is probably different to what y... <a href="#">See full overview</a></p>
+      <p class="font-17 margin-bottom20"><%= @program.overview_text.try(:truncate, 144) %><a href="#">See full overview</a></p>
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 program-section margin-bottom50" style="padding: 0;">
       <div>

@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require jquery-ui
+//= require video
 //= require turbolinks
 //= require plugins
 //= require_tree .
