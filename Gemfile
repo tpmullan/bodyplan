@@ -39,6 +39,10 @@ gem 'simple_form', '~> 3.1'
 # gem 'gmaps4rails'
 gem 'geocoder'
 
+# Email theme and auto inline css
+gem 'roadie', '~> 3.0.4'
+gem 'roadie-rails'
+
 #for SMS notifications
 #gem 'twilio-ruby'
 #gem 'phonelib'
