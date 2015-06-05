@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :identities
   has_many :subscriptions
   has_many :programs, through: :subscriptions
-  has_many :comments
+  has_many :reviews
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

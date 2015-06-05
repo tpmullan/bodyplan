@@ -1,0 +1,93 @@
+// Place all the styles related to the reviews controller here.
+// They will automatically be included in application.css.
+
+#reviews {
+margin-bottom: 30px;
+background-color: #fff;
+border: 1px solid #E3E3E3;
+color: #474747;
+h2 {
+  margin-top: 25px;
+  font-family: 'Open Sans', sans-serif;
+}
+}
+
+
+
+.review {
+margin: 0 50px 20px 50px;
+color: #474747;
+font-family: Helvetica Neue, Helvetica, Arial;
+font-weight: 300;
+font-size: 14px;
+h5 {
+  margin: 0 10px 10px 10px;
+}
+p {
+  font-size: 14px;
+}
+}
+
+.stars-1, .stars-2, .stars-3, .stars-4, .stars-5 {
+background-image: image-url('stars-sprite.png');
+background-repeat: no-repeat;
+display: inline-block;
+vertical-align: middle;
+height: 15px;
+width: 75px;
+}
+.stars-1 {
+width: 15px;
+}
+
+.stars-2 {
+background-position: 0 -15px;
+width: 30px;
+}
+
+.stars-3 {
+background-position: 0 -30px;
+width: 45px;
+}
+
+.stars-4 {
+background-position: 0 -45px;
+width: 60px;
+}
+
+.stars-5 {
+background-position: 0 -60px;
+}
+
+.starslarge-1, .starslarge-2, .starslarge-3, .starslarge-4, .starslarge-5 {
+background-image: image-url('starslarge-sprite.png');
+background-repeat: no-repeat;
+display: inline-block;
+vertical-align: middle;
+height: 25px;
+width: 125px;
+}
+.starslarge-1 {
+width: 25px;
+}
+
+.starslarge-2 {
+background-position: 0 -25px;
+width: 50px;
+}
+
+.starslarge-3 {
+background-position: 0 -50px;
+width: 75px;
+}
+
+.starslarge-4 {
+background-position: 0 -75px;
+width: 100px;
+}
+
+.starslarge-5 {
+background-position: 0 -100px;
+}
+
+// You can use Sass (SCSS) here: http://sass-lang.com/

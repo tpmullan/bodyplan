@@ -1,7 +1,7 @@
 class Program < ActiveRecord::Base
   belongs_to :trainer, class_name: 'User'
   has_many :users, through: :subscriptions
-  has_many :comments, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_many :subscriptions
 
   scope :trending, -> { where( trending: true ).limit(6) }

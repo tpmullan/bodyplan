@@ -28,6 +28,7 @@ gem 'paperclip-av-transcoder'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+#gem 'jquery-turbolinks' # might need this for other jquery libraries not including until needed
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.2.16'
 # bundle exec rake doc:rails generates the API under doc/api.
