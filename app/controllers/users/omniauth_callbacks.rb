@@ -33,9 +33,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user.skip_confirmation!
         @user.save!
       end
+    else
+      @user.update_from_identity(@identity)
     end
     
-    @user.update_from_identity(@identity)
 
     if @user.persisted?
       @identity.update_attribute( :user_id, @user.id )
