@@ -1,9 +1,9 @@
 change = ->
-  for player in document.getElementsByClassName 'video-js'
+  for player in $('.video-js')
     video = videojs(player)
 
 before_change = ->
-  for player in document.getElementsByClassName 'video-js'
+  for player in $('.video-js')
      video = videojs(player)
      video.dispose()
 
