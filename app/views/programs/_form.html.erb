@@ -1,0 +1,18 @@
+<%= simple_form_for(@program) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs"> :trainer_id, :name, :rating, :difficulty, :equipment_required, :cover_photo, :overview_text, :overview_video
+    <%= f.association :trainer %>
+    <%= f.input :name %>
+    <%= f.input :rating %>
+    <%= f.input :difficulty %>
+    <%= f.input :equipment_required %>
+    <%= f.input :cover_photo %>
+    <%= f.input :overview_text %>
+    <%= f.input :overview_video %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

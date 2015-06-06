@@ -32,14 +32,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
         @user.profile_pic = URI.parse(@identity.image)
         @user.skip_confirmation!
         @user.save!
-      else
-        @user.update_from_identity(@identity)
-      end
     end
-
-    if @user.email.blank? && @identity.email
-      @user.update_attribute( :email, @identity.email)
-    end
+    
+    @user.update_from_identity(@identity)
 
     if @user.persisted?
       @identity.update_attribute( :user_id, @user.id )
