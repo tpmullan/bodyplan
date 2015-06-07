@@ -1,45 +1,17 @@
-<p id="notice"><%= notice %></p>
-
-<div class="row">
-  <div class="col-md-:9">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12 lead">User profile<hr></div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <%= image_tag avatar_url(@user, 120), alt: '', class: "img-circle avatar avatar-original", size: '120' %>              
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <h1 class="only-bottom-margin"><%= @user.name %></h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <span class="text-muted">Email:</span> <%= @user.email %><br>
-                  <span class="text-muted">Gender:</span> <%= @user.sex %><br><br>
-                  <small class="text-muted">Created: <%= @user.created_at.strftime t('date')[:formats][:long] %></small>
-                </div>
-                <div class="col-md-6">
-                <div class="activity-mini">
-                  <i class="glyphicon glyphicon-comment text-muted"></i> 500
-                </div>
-                <div class="activity-mini">
-                  <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <hr><%= link_to '<i class="glyphicon glyphicon-pencil"></i> Edit'.html_safe, edit_user_path(@user), class: 'btn btn-default pull-right' %>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid background-color">
+  <p id="notice"><%= notice %></p>
+  <div class="pad-40"></div>
+  <div class="container profile">
+    <div class="col-xs-3">
+      <ul>
+        <li>Edit Profile</li>
+        <li>Recommend a Program</li>
+        <li>Change Password</li> 
+      </ul>
     </div>
+    <div class="col-xs-9">
+    </div>
+
   </div>
 </div>
+
