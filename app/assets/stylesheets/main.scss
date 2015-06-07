@@ -229,6 +229,10 @@ footer {
   font-size: 1.2em;
 }
 
+.font-14 {
+  font-size: 1.4em;
+}
+
 .font-17 {
   font-size: 1.7em;
 }
@@ -270,4 +274,23 @@ footer {
   background-position: 0 -26px;
 }
 
+.progress-bar-warning {
+  background-color: #F5A623;
+}
 
+.progress {
+  border-radius: 5px;
+  margin-bottom: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin-right: 10px;
+}
+.progress-bar {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
+
+.dark-gray {
+  color: #4D4D4D;
+}
