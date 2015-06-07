@@ -1,6 +1,6 @@
 <div class="review">
   <span class="stars-<%= review.rating %>"></span><h5 class="display-inline"><%= review.title %></h5><span class="lighter-gray font-light"><%= review.created_at.strftime t('date')[:formats][:long] %></span>
-<p class="lighter-gray">By <%= link_to review.user.first_name + review.user.first_name, review.user %></p>
+<p class="lighter-gray">By <%= link_to review.user.first_name, review.user %></p>
 <p><%= review.body %></p>
 </div>
 
