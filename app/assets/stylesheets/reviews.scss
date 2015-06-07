@@ -90,4 +90,32 @@ width: 100px;
 background-position: 0 -100px;
 }
 
+
+
+.ratings-chart {
+  table {
+    width: 100%;
+  }
+  span {
+    color: #929090; 
+    vertical-align: middle;
+    font-size: 18px;
+  }
+  td {
+    font-size: 1.4em;
+    color: #929090;
+    padding-bottom: 3px;
+    padding-top: 3px;
+  }
+  td:nth-child(1){
+    width: 15%;
+  }
+  td:nth-child(2){
+    width: 70%;
+  }
+  td:nth-child(3){
+    width: 15%;
+  }
+}
+
 // You can use Sass (SCSS) here: http://sass-lang.com/
