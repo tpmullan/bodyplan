@@ -30,6 +30,10 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
     @user = user || User.new
+
+    can :read, Program
+    can :read, Review
+
     send @user.role
   end
   
@@ -39,10 +43,14 @@ class Ability
 
   def trainer
     can :manage, User, id: @user.id
+    can :manage, Program, trainer_id: @user.id
+    can :create, Program
   end
 
   def customer
     can :manage, User, id: @user.id
+    can :manage, Review, user_id: @user.id
+    can :create, Review
   end
 
   def public

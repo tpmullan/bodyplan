@@ -1,5 +1,8 @@
 class ProgramsController < ApplicationController
   before_action :set_program, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
+  load_and_authorize_resource param_method: :program_params
   
   def index
   end

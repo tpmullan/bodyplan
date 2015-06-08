@@ -59,7 +59,7 @@ class User < ActiveRecord::Base
     self.phone= identity.phone
     self.first_name= identity.first_name
     self.last_name= identity.last_name
-    self.profile_pic = URI.parse(@identity.image)
+    self.profile_pic = URI.parse(identity.image)
     self.save
   end
 
