@@ -1,6 +1,6 @@
 <div class="ratings-chart col-xs-12 col-sm-6 col-sm-offset-3">
-  <p class="text-center"><span class="starslarge-<%= @program.rating %>" style="margin-right: 10px;"></span><span>(<span style="color: #0CAFFF;"><%= @program.reviews.count %></span>)</span></p>
-  <p class="lighter-gray text-center font-14"><%= @program.rating %> out of 5</p>
+  <p class="text-center"><span class="starslarge-<%= @program.rating.try(:to_i) %>" style="margin-right: 10px;"></span><span>(<span style="color: #0CAFFF;"><%= @program.reviews.count %></span>)</span></p>
+  <p class="lighter-gray text-center font-14"><%= @program.rating.try(:round, 2) %> out of 5</p>
   <table>
     <tr>
       <td>5 Star</td>
