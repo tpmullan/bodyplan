@@ -1,5 +1,7 @@
 change = ->
   for player in $('.video-js')
+    $(player).on 'contextmenu', (e) ->
+      e.preventDefault()
     video = videojs(player)
 
 before_change = ->

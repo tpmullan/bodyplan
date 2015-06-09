@@ -2,13 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "reviews/edit", type: :view do
   before(:each) do
-    @review = assign(:review, Review.create!(
-      :user => nil,
-      :program => nil,
-      :body => "MyText",
-      :rating => 1,
-      :title => "MyString"
-    ))
+    @review = assign(:review, FactoryGirl.create(:review))
   end
 
   it "renders the edit review form" do

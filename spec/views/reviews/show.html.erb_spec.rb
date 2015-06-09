@@ -2,13 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "reviews/show", type: :view do
   before(:each) do
-    @review = assign(:review, Review.create!(
-      :user => nil,
-      :program => nil,
-      :body => "MyText",
-      :rating => 1,
-      :title => "Title"
-    ))
+    @review = assign(:review, FactoryGirl.create(:review) )
   end
 
   it "renders attributes in <p>" do

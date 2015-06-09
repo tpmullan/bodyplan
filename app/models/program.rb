@@ -16,4 +16,21 @@ class Program < ActiveRecord::Base
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
   validates_attachment_content_type :overview_video, :content_type => /\Avideo\/.*\Z/
 
+  def update_ratings
+    count = reviews.count
+    self.rating = reviews.average('rating')
+    
+    self.star5 = reviews.where( rating: 5 ).count
+    self.star4 = reviews.where( rating: 4 ).count
+    self.star3 = reviews.where( rating: 3 ).count
+    self.star2 = reviews.where( rating: 2 ).count
+    self.star1 = reviews.where( rating: 1 ).count
+    
+    self.star5percent = ( self.star5.to_d / count ) * 100
+    self.star4percent = ( self.star4.to_d / count ) * 100
+    self.star3percent = ( self.star3.to_d / count ) * 100
+    self.star2percent = ( self.star2.to_d / count ) * 100
+    self.star1percent = ( self.star1.to_d / count ) * 100
+    self.save!
+  end
 end
