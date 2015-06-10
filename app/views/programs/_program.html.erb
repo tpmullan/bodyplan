@@ -24,7 +24,7 @@
           <span class="difficulty-<%= program.difficulty %>"></span>
         </td>
         <td style="padding-right: 27px;">
-          <%= program.rating %>
+          <%= program.rating.try(:round, 2) %>
         </td>
       </tr>
       </tbody>

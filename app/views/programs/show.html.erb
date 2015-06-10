@@ -1,7 +1,7 @@
 <div class="container text-center" style="margin-bottom: 12px;">
   <h2 class="font-30"><%= @program.name %></h2>
   <p class="font-18"><%= @program.equipment_required %></p>
-  <span class="starslarge-<%= @program.rating %>"></span> <span class="font-18">(<a href="#" class="link-color"><%= @program.reviews.count %></a>)</span>
+  <span class="starslarge-<%= @program.rating.try(:to_i) %>"></span> <span class="font-18">(<a href="#" class="link-color"><%= @program.reviews.count %></a>)</span>
 </div>
 <div class="container-fluid individual-program-overview ">
   <div class="container" style="margin-top: 20px;">
@@ -63,7 +63,7 @@
       <% if @program.reviews.empty? %> 
       <!-- No reviews Message start -->
       <div>
-        <h3>No reviews yet. <%= link_to 'Write a Review' %></h3>
+        <h3>No reviews yet. <%= link_to 'Write a Review', new_review_path %></h3>
       </div>
       <!-- No Reviews Message End -->
       <% else %>
