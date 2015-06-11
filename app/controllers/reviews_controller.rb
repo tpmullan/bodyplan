@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/new
   def new
-    @review = Review.new
+    @review = Review.new(user_id: current_user.id, program_id: params[:program_id])
   end
 
   # GET /reviews/1/edit

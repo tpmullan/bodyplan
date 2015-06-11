@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150609035718) do
 
-  create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "program_id"
-    t.text     "comment"
-    t.string   "tag_line"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -45,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150609035718) do
   create_table "programs", force: :cascade do |t|
     t.integer  "trainer_id"
     t.string   "name"
-    t.decimal  "rating"
+    t.decimal  "rating",                      default: 5.0
     t.string   "overview_video_file_name"
     t.string   "overview_video_content_type"
     t.integer  "overview_video_file_size"
@@ -62,7 +53,6 @@ ActiveRecord::Schema.define(version: 20150609035718) do
     t.boolean  "trending",                    default: false
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
-    t.decimal  "star0"
     t.integer  "star5"
     t.integer  "star4"
     t.integer  "star3"

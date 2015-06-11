@@ -40,6 +40,9 @@ gem 'simple_form', '~> 3.1'
 # gem 'gmaps4rails'
 gem 'geocoder'
 
+# Payment Processing
+gem "braintree"
+
 # Email theme and auto inline css
 gem 'roadie', '~> 3.0.4'
 gem 'roadie-rails'

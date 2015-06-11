@@ -10,9 +10,9 @@ RSpec.describe "reviews/edit", type: :view do
 
     assert_select "form[action=?][method=?]", review_path(@review), "post" do
 
-      assert_select "select#review_user_id[name=?]", "review[user_id]"
+      assert_select "input#review_user_id[name=?]", "review[user_id]"
 
-      assert_select "select#review_program_id[name=?]", "review[program_id]"
+      assert_select "input#review_program_id[name=?]", "review[program_id]"
 
       assert_select "textarea#review_body[name=?]", "review[body]"
 

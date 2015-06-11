@@ -16,13 +16,7 @@
       <p><%= image_tag 'heart.png' %><span>30 day money back guarantee!</span></p>
       <p><%= image_tag 'infinity-small.png' %><span>Lifetime access, no exceptions!</span></p>
       <div class="line-divider col-xs-12"></div>
-      <!-- replace with trainer name, profile picture, bio, and link to user profile-->
-      <div class="text-center margin-bottom15">
-        <%= image_tag 'golden-cup.png', class: 'user-thumbnail' %> <h5>Alex Morgan</h5>
-      </div>
-      <p>Alex Morgan is a soccer player and olympic gold medalist. She is the 6th and youngest US soccer player to score 20 goals in a year. US soccer athlete of the year and FIFA world player of year finalist. See profile
-        <%= link_to 'See Profile', @program.trainer %>
-      </p>
+      <%= render 'trainer', user: @program.trainer %>
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2" id="overview">
       <h2 class="text-center font-25"> Program Overview</h2>
@@ -63,7 +57,7 @@
       <% if @program.reviews.empty? %> 
       <!-- No reviews Message start -->
       <div>
-        <h3>No reviews yet. <%= link_to 'Write a Review', new_review_path %></h3>
+        <h3>No reviews yet. <%= link_to 'Write a Review', new_review_path(program_id: @program.id) %></h3>
       </div>
       <!-- No Reviews Message End -->
       <% else %>
