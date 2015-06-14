@@ -20,6 +20,8 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    billing_address = @user.customer.try(:addresses).try(:first) || @user.customer.addresses.build(country_code_alpha2: 'US', region: 'Texas')
+    @credit_card = @user.customer.credit_cards.first || @user.customer.credit_cards.build({cardholder_name: @user.name, billing_address: billing_address})
   end
 
   # POST /users

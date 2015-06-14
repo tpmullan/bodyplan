@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150609035718) do
+ActiveRecord::Schema.define(version: 20150614005108) do
 
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20150609035718) do
     t.string   "profile_pic_content_type"
     t.integer  "profile_pic_file_size"
     t.datetime "profile_pic_updated_at"
+    t.string   "customer_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

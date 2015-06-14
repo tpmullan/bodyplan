@@ -35,13 +35,14 @@ gem 'jbuilder', '~> 2.2.16'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Form generation
 gem 'simple_form', '~> 3.1'
+gem 'carmen'
 
 # Location information
 # gem 'gmaps4rails'
 gem 'geocoder'
 
 # Payment Processing
-gem "braintree"
+gem "braintree-rails"
 
 # Email theme and auto inline css
 gem 'roadie', '~> 3.0.4'

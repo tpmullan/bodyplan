@@ -7,7 +7,6 @@
         <ul class="nav nav-stacked" role="tablist" id="myTab">
           <li role="presentation" class="active"><a href="#profile" aria-controls="edit" role="tab" data-toggle="tab">Edit Profile</a></li>
           <li role="presentation"><a href="#program" aria-controls="program" role="tab" data-toggle="tab">Recommend a program</a></li>
-          <li role="presentation"><a href="#credit" aria-controls="credit" role="tab" data-toggle="tab">Update Credit Card</a></li>
           <li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Change Password</a></li>
         </ul>             
       </div>
@@ -26,10 +25,7 @@
               <%= f.button :submit, 'Save', class: 'standard-button' %>
             <% end %>
           </div>
-          <div role="tabpanel" class="tab-pane" id="credit">
-            <h1>Update your credit card info.</h1>
-            <%= render 'credit_cards/form' %>
-          </div><div role="tabpanel" class="tab-pane" id="password">
+          <div role="tabpanel" class="tab-pane" id="password">
             <h1>Change Password</h1>
             <%= simple_form_for(@user, html: { class: 'form-horizontal' }) do |f| %>
               <%= f.input :password %>

@@ -27,10 +27,6 @@ $(document).ready ->
       align: 'center'
   # --------------------------------------------------------------------------------------------------------------------
   
-  # --------------------------------------------------------------------------------------------------------------------
-# Braintree setup
-@braintree = Braintree.create('MIIBCgKCAQEAoFd1cHv/uIA1VEkFRX8B/yH5g5trJNadU2B1LCugZDryd9nGNYu3Meakgppdz5c430gZ04jeXc20wCG2WSdfGuQBRj7JjhZvd2sS/2Gzxud8ztTAAMtNqRy/ujdO3W1/w5V4gG5A3xDDXxdLnbBaGXElGoVk3mCcH+xmtE4M5n7WMObT8IwHSFszP6BhSNPpldADJ/TcPjxGkulCXOIxB9BhGqFt6N7WgoWlLHOkRIQs4QBo1o7DPqDPZlvR6+zKtOvFdCMZXFmzdyEZg2e4dBjUb59qyUyneieKHoxnCsJI0lMrj26FY3lGclHmX1WFnUWBArpsajbsryps74SoXwIDAQAB')
-
 
 # character counter
 @setMaxLength = (selector = $(".char-max-length")) ->

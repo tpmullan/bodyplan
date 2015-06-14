@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
 
+  after_destroy :destroy_customer
+  after_create :create_customer
+  after_save :update_customer
+
   def twitter
     identities.where( :provider => "twitter" ).first
   end
@@ -82,6 +86,25 @@ class User < ActiveRecord::Base
     else
       email
     end
+  end
+
+  def customer
+    customer_id && BraintreeRails::Customer.new(customer_id)
+  end
+
+  private
+  def destroy_customer
+    BraintreeRails::Customer.delete(customer_id) if customer_id.present?
+  end
+
+  def create_customer
+    customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
+    BraintreeRails::Customer.new(customer_info).save
+  end
+
+  def update_customer
+    customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
+    customer.update_attributes(customer_info)
   end
 
 end
