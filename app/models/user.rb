@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
 
   def google_oauth2_client
     if !@google_oauth2_client
-      @google_oauth2_client = Google::APIClient.new(:application_name => 'HappySeed App', :application_version => "1.0.0" )
+      @google_oauth2_client = Google::APIClient.new(:application_name => 'BodyPlanFitness', :application_version => "1.0.0" )
       @google_oauth2_client.authorization.update_token!({:access_token => google_oauth2.accesstoken, :refresh_token => google_oauth2.refreshtoken})
     end
     @google_oauth2_client
@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
   end
 
   def customer
-    customer_id && BraintreeRails::Customer.new(customer_id)
+    @customer ||= customer_id && BraintreeRails::Customer.new(customer_id)
   end
 
   private
@@ -99,12 +99,13 @@ class User < ActiveRecord::Base
 
   def create_customer
     customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
-    BraintreeRails::Customer.new(customer_info).save
+    @customer = BraintreeRails::Customer.new(customer_info)
+    @customer.save
   end
 
   def update_customer
     customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
-    customer.update_attributes(customer_info)
+    self.customer.update_attributes(customer_info)
   end
 
 end
