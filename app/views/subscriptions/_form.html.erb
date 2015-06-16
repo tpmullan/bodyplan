@@ -1,4 +1,4 @@
-<%= simple_form_for(@subscription) do |f| %>
+<%= simple_form_for @subscription, url: @subscription.new_record? ? user_subscriptions_path(@user) : user_subscription_path(@user, @subscription) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
