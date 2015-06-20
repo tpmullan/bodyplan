@@ -2,8 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.association :program %>
+    <%= f.input :user_id, as: 'hidden' %>
+    <%= f.input :program_id, as: 'hidden' %>
     <%= f.input :body %>
     <%= f.input :rating %>
     <%= f.input :title %>

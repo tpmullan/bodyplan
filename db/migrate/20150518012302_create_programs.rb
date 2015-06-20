@@ -3,7 +3,7 @@ class CreatePrograms < ActiveRecord::Migration
     create_table :programs do |t|
       t.references :trainer, references: :users, index: true
       t.string :name
-      t.decimal :rating
+      t.decimal :rating, default: 5
       t.attachment :overview_video
       t.text :overview_text
       t.attachment :cover_photo
