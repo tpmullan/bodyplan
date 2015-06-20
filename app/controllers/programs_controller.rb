@@ -6,7 +6,8 @@ class ProgramsController < ApplicationController
   
   def index
     # TODO Needs to be changed out when we decide on what search gem to go with
-    @results = Program.all
+    @results = Program.all.paginate(:page => params[:page], :per_page => 15)
+
   end
 
   def show

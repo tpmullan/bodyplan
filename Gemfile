@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'chart-js-rails'
 gem 'videojs_rails', '~> 4.6.1'
+gem 'will_paginate', '~> 3.0.6'
 
 #font/style
 gem 'font-awesome-rails'

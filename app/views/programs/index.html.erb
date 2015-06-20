@@ -49,6 +49,7 @@
       <div class="container individual-programs margin-zero">
 	    <%= render :partial => "result", :collection => @results %>
       </div>
+      <%= will_paginate @results %>
     </div>
   </div>
 </div>

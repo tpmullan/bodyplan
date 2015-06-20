@@ -323,3 +323,26 @@ footer {
 .navbar {
   z-index: 110;
 }
+
+.background-white {
+  background-color: #fff !important;
+}
+
+.pad20 {
+  padding: 10px;
+}
+
+.btn-reg {
+  background-color: #F6F3F3;
+  border-radius: 5px;
+  color: #333;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid gray;
+  margin: 10px;
+  &:hover {
+    background-color: darken($background-color, 5%);
+    color: darken(#333, 5%);
+    text-decoration: none;
+  }
+}
