@@ -92,6 +92,10 @@ footer {
   }
 }
 
+.margin-zero {
+  margin: 0;
+}
+
 .programs {
   margin: 0;
   background-color: $background-color;
@@ -100,12 +104,16 @@ footer {
     text-align: center;
   }
   .individual-programs > div {
-    background-color: #fff;
     padding: 0;
     border-radius: 5px;
     width: 29%;
     min-height: 245px;
     margin: 1% 2%;
+    .program-holder {
+      width: 85%;
+      margin: 15px;
+      background-color: #fff;
+    }
     .program-header{
       height: 160px;
       background-position: center;
@@ -305,4 +313,13 @@ footer {
 
 .background-color {
   background-color: #F6F3F3;
+}
+
+.side-divider {
+  border-bottom: 1px solid $gray;
+  margin: 15px 0;
+}
+
+.navbar {
+  z-index: 110;
 }

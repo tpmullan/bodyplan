@@ -87,6 +87,11 @@
 //PROGRAMS INDEX PAGE (ALL PROGRAMS PAGE)
 
 .filter-menu {
+  padding-top: 65px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
   padding-left: 40px;
   background-color: #fff;
   border-right: 1px solid #979797;
@@ -95,15 +100,46 @@
     font-weight: 600;
     font-size: 1.8em;
   }
+  .sidemenu-list {
+    padding: 0;
+    list-style-type: none;
+    font-size: 13px;
+    li {
+      padding: 6px 0;
+    }
+    li:hover {
+      background-color: $background-color;
+    }
+  }
+  .input-group-btn {
+    text-align: center;
+    button {
+      width: 80%;
+      border-radius: 5px !important;
+      background-color: $background-color;
+      font-size: 15px;
+      padding: 4px;
+    }
+    .dropdown-menu {
+      left: 10%;
+      li {
+        font-size: 11px;
+      }
+    }
+  }
 }
 
 .program-index {
   padding-left: 80px;
+  form {
+    padding: 0;
+    .input-group {
+      width: 80%;
+    }
+  }
+  
   #search-programs {
-    border-radius: 10px;
-    border: 1px solid #979797;
-    height: 26px;
-    width: 100%;
+    border-radius: 10px 0 0 10px;
   }
   h1{
     font-weight: 600;

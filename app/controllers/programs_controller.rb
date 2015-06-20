@@ -5,6 +5,8 @@ class ProgramsController < ApplicationController
   load_and_authorize_resource param_method: :program_params
   
   def index
+    # TODO Needs to be changed out when we decide on what search gem to go with
+    @results = Program.all
   end
 
   def show
