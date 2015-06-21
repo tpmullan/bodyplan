@@ -12,3 +12,15 @@
 @import "programs";
 @import "reviews";
 @import "profile";
+
+
+@font-face {
+  font-family: 'AvenirNext';
+  src: font-url('AvenirNext-Regular.eot');
+  src: font-url('AvenirNext-Regular.eot?#iefix') format('embedded-opentype'),
+    font-url('AvenirNext-Regular.ttf') format('truetype'),
+    font-url('AvenirNext-Regular.woff') format('woff'),
+    font-url('AvenirNext-Regular.svg#AvenirNext') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
