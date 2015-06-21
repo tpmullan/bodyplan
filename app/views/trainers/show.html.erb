@@ -1,0 +1,35 @@
+<div class="container-fluid background-color">
+  <div class="pad-40"></div>
+  <div class="container"> 
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 profile-settings">
+      <div class="col-md-3 profile-settings-menu ">
+        <%= image_tag avatar_url(@user, 120), alt: '', class: "img-circle avatar avatar-original text-center", size: '120' %>
+        <ul class="nav nav-stacked" role="tablist" id="myTab">
+          <li role="presentation" class="active"><a href="#profile" aria-controls="edit" role="tab" data-toggle="tab">Financial Summary</a></li>
+          <li role="presentation"><a href="#program" aria-controls="program" role="tab" data-toggle="tab">Programs</a></li>
+          <li role="presentation"><a href="#password" aria-controls="password" role="tab" data-toggle="tab">Clients</a></li>
+        </ul>             
+      </div>
+      <div class="col-md-9 profile-settings-content">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="profile">
+            <h1>Financial Summary</h1>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="program">
+            <h1>Your Programs</h1>
+            
+          </div>
+          <div role="tabpanel" class="tab-pane" id="password">
+            <h1>Your Clients</h1>
+            
+          </div>
+        </div>
+        <div class="col-md-12">
+            <%= link_to '<i class="glyphicon glyphicon-arrow-left"></i> Profile'.html_safe, current_user , class: 'btn btn-default pull-right' %>
+        </div>  
+        <div class="pad-40"></div>
+      </div>  
+    </div>
+  </div>
+  <div class="pad-40"></div>
+</div>
