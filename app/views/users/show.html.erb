@@ -11,7 +11,13 @@
       <% end %>
     </div>
   </div>
-  <div class="container-fluid ">
+  <div class="programs">
+    <div class="container individual-programs">
+      <h3>Purchased Programs</h3>
+      <%= render :partial => "subscriptions", :collection => @subscriptions %>
+    </div>
+  </div>
+    <div class="container-fluid ">
     <div class="container referral-panel">
       <div class="col-xs-12 col-md-10 col-md-offset-1" id="upper-section">
     <h1 class="font-4em font text-center">Invite friends, earn cash.</h1>

@@ -113,6 +113,9 @@ footer {
       width: 85%;
       margin: 15px;
       background-color: #fff;
+      a:hover {
+        text-decoration: none;
+      }
     }
     .program-header{
       height: 160px;

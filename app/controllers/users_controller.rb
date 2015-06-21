@@ -11,6 +11,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    #TODO needs to be changed
+    @subscriptions = @user.programs
   end
 
   # GET /users/new
