@@ -6,7 +6,7 @@
         <h3><%= @user.name %></h3>
         <p><%= @user.bio %></p>
       </div>
-      <%= link_to  edit_user_path(current_user), class: 'btn-reg pull-right' do %>
+      <%= link_to  edit_user_path(@user), class: 'btn-reg pull-right' do %>
         <i class="fa fa-cog"> </i> Edit Profile
       <% end %>
     </div>
@@ -47,7 +47,7 @@
     </table>
     <div class="pad40 col-xs-12"></div>
     <div>
-      <p>Share the url below or promo code:<span style="font-size: 1.3em;"><%= current_user ? @promo : link_to('Sign In', new_user_session_path) %></span></p>
+      <p>Share the url below or promo code:<span style="font-size: 1.3em;"><%= @user ? @promo : link_to('Sign In', new_user_session_path) %></span></p>
     </div>
     <input class="input-field form-control font-2em" autofocus="autofocus" value="<%=request.protocol + request.host%>?referral= <%= @promo %>" type="text">
     </div>

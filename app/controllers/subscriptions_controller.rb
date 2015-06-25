@@ -1,5 +1,6 @@
 class SubscriptionsController < ApplicationController
   before_action :set_subscription, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /subscriptions
   # GET /subscriptions.json
@@ -14,7 +15,7 @@ class SubscriptionsController < ApplicationController
 
   # GET /subscriptions/new
   def new
-    @subscription = Subscription.new(user: current_user)
+    @subscription = Subscription.new(user: @user)
   end
 
   # GET /subscriptions/1/edit
@@ -61,10 +62,28 @@ class SubscriptionsController < ApplicationController
     end
   end
 
+    def subscriptions_path
+      path ||= user_subscriptions_path(@user) if @user
+      path ||= plan_subscriptions_path(@plan) if @plan
+      path ||= super
+    end
+    def subscription_url(subscription, options={})
+      subscription_path(subscription, options={})
+    end
+    def subscription_path(subscription, options={})
+      path ||= user_subscription_path(@user, subscription, options) if @user
+      path ||= plan_subscription_path(@plan, subscription, options) if @plan
+      path ||= super(subscription, options)
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_subscription
       @subscription = Subscription.find(params[:id])
+    end
+    
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

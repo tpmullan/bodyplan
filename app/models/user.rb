@@ -18,6 +18,10 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :profile_pic, :content_type => /\Aimage\/.*\Z/
 
+  after_destroy :destroy_customer
+  after_create :create_customer
+  after_save :update_customer
+
   def twitter
     identities.where( :provider => "twitter" ).first
   end
@@ -48,7 +52,7 @@ class User < ActiveRecord::Base
 
   def google_oauth2_client
     if !@google_oauth2_client
-      @google_oauth2_client = Google::APIClient.new(:application_name => 'HappySeed App', :application_version => "1.0.0" )
+      @google_oauth2_client = Google::APIClient.new(:application_name => 'BodyPlanFitness', :application_version => "1.0.0" )
       @google_oauth2_client.authorization.update_token!({:access_token => google_oauth2.accesstoken, :refresh_token => google_oauth2.refreshtoken})
     end
     @google_oauth2_client
@@ -76,12 +80,36 @@ class User < ActiveRecord::Base
     end
   end
 
+  def trainer?
+    role == :trainer
+  end
+
   def name
     if first_name || last_name
       "#{first_name} #{last_name}" 
     else
       email
     end
+  end
+
+  def customer
+    @customer ||= customer_id && BraintreeRails::Customer.new(customer_id)
+  end
+
+  private
+  def destroy_customer
+    BraintreeRails::Customer.delete(customer_id) if customer_id.present?
+  end
+
+  def create_customer
+    customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
+    @customer = BraintreeRails::Customer.new(customer_info)
+    @customer.save
+  end
+
+  def update_customer
+    customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
+    self.customer.try(:update_attributes, customer_info)
   end
 
 end

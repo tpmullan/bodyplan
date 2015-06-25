@@ -124,7 +124,7 @@ RSpec.describe UsersController, type: :controller do
         user = create_user(valid_attributes)
         put :update, {:id => user.to_param, :user => new_attributes}
         user.reload
-        skip("Add assertions for updated state")
+        expect(user.name).to eq("joe bob")
       end
 
       it "assigns the requested user as @user" do
