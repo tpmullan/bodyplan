@@ -35,8 +35,8 @@ class Program < ActiveRecord::Base
   end
 
   def self.search(search)
-    order(name: :asc).where('name LIKE ? OR overview_text LIKE ? OR rating LIKE ? OR difficulty LIKE ? OR equipment_required LIKE ?', 
-                            "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    order(name: :asc).where('name LIKE ? OR overview_text LIKE ? OR equipment_required LIKE ?', 
+                            "%#{search}%", "%#{search}%", "%#{search}%")
 
   end
 end
