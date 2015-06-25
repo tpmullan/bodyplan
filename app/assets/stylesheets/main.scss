@@ -92,6 +92,10 @@ footer {
   }
 }
 
+.margin-zero {
+  margin: 0;
+}
+
 .programs {
   margin: 0;
   background-color: $background-color;
@@ -100,12 +104,19 @@ footer {
     text-align: center;
   }
   .individual-programs > div {
-    background-color: #fff;
     padding: 0;
     border-radius: 5px;
     width: 29%;
     min-height: 245px;
     margin: 1% 2%;
+    .program-holder {
+      width: 85%;
+      margin: 15px;
+      background-color: #fff;
+      a:hover {
+        text-decoration: none;
+      }
+    }
     .program-header{
       height: 160px;
       background-position: center;
@@ -278,6 +289,11 @@ footer {
   background-color: #F5A623;
 }
 
+.progress-bar {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border-radius: 5px;
+}
 .progress {
   border-radius: 5px;
   margin-bottom: 0;
@@ -285,10 +301,14 @@ footer {
   box-shadow: none;
   margin-right: 10px;
 }
-.progress-bar {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+
+.progress-referral {
   border-radius: 5px;
+  span {
+    position: relative;
+    top: 25%;
+    font-size: 1.5em;
+  }
 }
 
 .dark-gray {
@@ -305,4 +325,40 @@ footer {
 
 .background-color {
   background-color: #F6F3F3;
+}
+
+.side-divider {
+  border-bottom: 1px solid $gray;
+  margin: 15px 0;
+}
+
+.navbar {
+  z-index: 110;
+}
+
+.background-white {
+  background-color: #fff !important;
+}
+
+.pad20 {
+  padding: 10px;
+}
+
+.btn-reg {
+  background-color: #F6F3F3;
+  border-radius: 5px;
+  color: #333;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid gray;
+  margin: 10px;
+  &:hover {
+    background-color: darken($background-color, 5%);
+    color: darken(#333, 5%);
+    text-decoration: none;
+  }
+}
+
+.pad40 {
+  padding: 20px 0 20px 0;
 }

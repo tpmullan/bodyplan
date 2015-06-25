@@ -13,6 +13,15 @@
 
 ActiveRecord::Schema.define(version: 20150614005108) do
 
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "program_id"
+    t.text     "comment"
+    t.string   "tag_line"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "identities", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "provider"
@@ -36,7 +45,7 @@ ActiveRecord::Schema.define(version: 20150614005108) do
   create_table "programs", force: :cascade do |t|
     t.integer  "trainer_id"
     t.string   "name"
-    t.decimal  "rating",                      default: 5.0
+    t.integer  "rating"
     t.string   "overview_video_file_name"
     t.string   "overview_video_content_type"
     t.integer  "overview_video_file_size"
@@ -46,13 +55,13 @@ ActiveRecord::Schema.define(version: 20150614005108) do
     t.string   "cover_photo_content_type"
     t.integer  "cover_photo_file_size"
     t.datetime "cover_photo_updated_at"
-    t.decimal  "price"
+    t.integer  "price"
     t.string   "difficulty"
     t.string   "equipment_required"
     t.integer  "session_intervals"
-    t.boolean  "trending",                    default: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.boolean  "trending"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "star5"
     t.integer  "star4"
     t.integer  "star3"
@@ -90,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150614005108) do
   add_index "subscriptions", ["program_id"], name: "index_subscriptions_on_program_id"
   add_index "subscriptions", ["user_id"], name: "index_subscriptions_on_user_id"
 
-  create_table "users", force: :cascade do |t|
+ create_table "users", force: :cascade do |t|
     t.string   "email",                    default: "", null: false
     t.string   "encrypted_password",       default: "", null: false
     t.string   "reset_password_token"
@@ -133,5 +142,4 @@ ActiveRecord::Schema.define(version: 20150614005108) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   add_index "users", ["unlock_token"], name: "index_users_on_unlock_token", unique: true
-
 end

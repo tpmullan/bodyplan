@@ -1,3 +1,4 @@
+<% if @credit_card %>
 <%= simple_form_for @credit_card, url: @credit_card.new_record? ? user_customer_credit_cards_path(@user) : user_customer_credit_card_path(@user, @credit_card),
 html: { class: 'form-horizontal', id: 'braintree-credit-card-form' } do |f| %>
   <%= f.input(:number, input_html: { 'data-encrypted-name' => true }) if @credit_card.new_record? %>
@@ -30,5 +31,6 @@ html: { class: 'form-horizontal', id: 'braintree-credit-card-form' } do |f| %>
 
 
   </script>
+<% end %>
 <% end %>
 

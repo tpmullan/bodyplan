@@ -1,43 +1,56 @@
-<div class="row">
-  <div class="col-md-:9">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-md-12 lead">User profile<hr></div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <%= image_tag avatar_url(@user, 120), alt: '', class: "img-circle avatar avatar-original", size: '120' %>              
-          </div>
-          <div class="col-md-8">
-            <div class="row">
-              <div class="col-md-12">
-                <h1 class="only-bottom-margin"><%= @user.name %></h1>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <span class="text-muted">Email:</span> <%= @user.email %><br>
-                  <span class="text-muted">Gender:</span> <%= @user.sex %><br><br>
-                  <small class="text-muted">Created: <%= @user.created_at.strftime t('date')[:formats][:long] %></small>
-                </div>
-                <div class="col-md-6">
-                <div class="activity-mini">
-                  <i class="glyphicon glyphicon-comment text-muted"></i> 500
-                </div>
-                <div class="activity-mini">
-                  <i class="glyphicon glyphicon-thumbs-up text-muted"></i> 1500
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <hr><%= link_to '<i class="glyphicon glyphicon-pencil"></i> Edit'.html_safe, edit_user_path(@user), class: 'btn btn-default pull-right' %>
-          </div>
-        </div>
+<div class="container-fluid user-profile">
+  <div class="container-fluid background-white">
+    <div class="container">
+      <div class="profile-header col-xs-12 col-sm-6 col-sm-offset-3 text-center">
+        <%= image_tag avatar_url(@user, 120), alt: '', class: "img-circle avatar avatar-original text-center", size: '120' %>
+        <h3><%= @user.name %></h3>
+        <p><%= @user.bio %></p>
       </div>
+      <%= link_to  edit_user_path(@user), class: 'btn-reg pull-right' do %>
+        <i class="fa fa-cog"> </i> Edit Profile
+      <% end %>
+    </div>
+  </div>
+  <div class="programs">
+    <div class="container individual-programs">
+      <h3>Purchased Programs</h3>
+      <%= render :partial => "subscriptions", :collection => @subscriptions %>
+    </div>
+  </div>
+    <div class="container-fluid ">
+    <div class="container referral-panel">
+      <div class="col-xs-12 col-md-10 col-md-offset-1" id="upper-section">
+    <h1 class="font-4em font text-center">Invite friends, earn cash.</h1>
+    <h3 class="font text-center">Send a $5 credit to your friends and earn even more for yourself when they join.</h3>
+    <p style="margin-top: 5%;">You currently have <strong><%= pluralize(@referrals, 'Referral')%> </strong> and <strong>$<%= @balance  %></strong> in credits</p>
+    <div class="progress">
+      <div class="progress-bar  progress-referral submit" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <%= @progress %>%;">
+        <span class="font referrals" style="color: white"><%= @referrals %></span>
+      </div>
+    </div>
+    <table id="referral-program" class="font col-xs-12">
+      <tr>
+        <td <% if @level == 'Join' %>class="referral-level" <% end %> >Join</td>
+            <td <% if @level == 'Supporter' %>class="referral-level" <% end %> >Supporter
+              <p>5 Referrals
+                <br>Get $15</p>
+            </td>
+        <td <% if @level == 'Ambassador' %>class="referral-level" <% end %> >Ambassador
+          <p>20 Referrals
+          <br>Get $30</p>
+        </td>
+        <td <% if @level == 'VIP' %>class="referral-level" <% end %> >VIP
+          <p>50 Referrals
+          <br>Get $150</p>
+        </td>
+      </tr>
+    </table>
+    <div class="pad40 col-xs-12"></div>
+    <div>
+      <p>Share the url below or promo code:<span style="font-size: 1.3em;"><%= @user ? @promo : link_to('Sign In', new_user_session_path) %></span></p>
+    </div>
+    <input class="input-field form-control font-2em" autofocus="autofocus" value="<%=request.protocol + request.host%>?referral= <%= @promo %>" type="text">
+    </div>
     </div>
   </div>
 </div>

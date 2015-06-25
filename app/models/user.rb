@@ -80,6 +80,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def trainer?
+    role == :trainer
+  end
+
   def name
     if first_name || last_name
       "#{first_name} #{last_name}" 
@@ -105,7 +109,7 @@ class User < ActiveRecord::Base
 
   def update_customer
     customer_info = attributes.symbolize_keys!.slice(:first_name, :last_name, :email, :company, :website, :phone, :fax)
-    self.customer.update_attributes(customer_info)
+    self.customer.try(:update_attributes, customer_info)
   end
 
 end
