@@ -37,19 +37,19 @@
   	  <h1>Fitness Programs</h1>
   	  <form class="navbar-form" role="search">
 		  <div class="input-group">
-			<input type="text" class="form-control" id="search-programs" placeholder="Search Programs" name="srch-term" id="srch-term">
+        <input type="text" class="form-control" id="search-programs" placeholder="Search Programs" name="search" value="<%= params[:search] %>">
 			<div class="input-group-btn">
 				<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
 			</div>
 		  </div>
 	  </form>
-  	  <h4>Search for '<span>something</span>' </h4>
+    <h4>Search for '<span><%= params[:search] || 'something' %></span>' </h4>
     </div>
     <div class="search-results programs">
       <div class="container individual-programs margin-zero">
-	    <%= render :partial => "result", :collection => @results %>
+	    <%= render :partial => "result", :collection => @programs %>
       </div>
-      <%= will_paginate @results %>
+      <%= will_paginate @programs %>
     </div>
   </div>
 </div>

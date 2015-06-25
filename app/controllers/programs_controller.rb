@@ -6,7 +6,13 @@ class ProgramsController < ApplicationController
   
   def index
     # TODO Needs to be changed out when we decide on what search gem to go with
-    @results = Program.all.paginate(:page => params[:page], :per_page => 15)
+    search_term = params[:search]
+    if search_term && !search_term.empty?
+      @programs = Program.search(search_term)
+    else
+      @programs = Program.all
+    end
+    @programs = @programs.paginate(:page => params[:page], :per_page => 15)
   end
 
   def show
