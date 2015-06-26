@@ -13,7 +13,7 @@
   </div>
   <div class="programs">
     <div class="container individual-programs">
-      <% unless @subscriptions.empty? %>
+      <% if @subscriptions && !@subscriptions.empty? %>
         <h3>Purchased Programs</h3>
         <%= render :partial => "subscriptions", :collection => @subscriptions %>
       <% end %>
