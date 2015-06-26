@@ -5,6 +5,12 @@ class Program < ActiveRecord::Base
   has_many :subscriptions
 
   scope :trending, -> { where( trending: true ).limit(6) }
+  scope :search, -> (search) do
+    if search && !search.empty?
+      where('name LIKE ? OR overview_text LIKE ? OR equipment_required LIKE ?',
+                              "%#{search}%", "%#{search}%", "%#{search}%")
+    end
+  end
 
   has_attached_file :cover_photo, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "program.jpg"
   has_attached_file :overview_video, styles: {
@@ -34,9 +40,4 @@ class Program < ActiveRecord::Base
     self.save!
   end
 
-  def self.search(search)
-    order(name: :asc).where('name LIKE ? OR overview_text LIKE ? OR equipment_required LIKE ?', 
-                            "%#{search}%", "%#{search}%", "%#{search}%")
-
-  end
 end
