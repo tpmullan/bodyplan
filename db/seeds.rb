@@ -8,7 +8,7 @@
 
 puts "Starting Seeds"
 
-trainer = User.new( first_name: 'Alex', last_name: 'Morgan', email: 'alex@example.com', 
+trainer = User.new( first_name: 'Alex', last_name: 'Morgan', email: 'alex@example.com', user_type: 1, 
                    profile_pic: File.new("#{Rails.root}/app/assets/images/icons/profile.png"),
                    password: 'tr@iner123', password_confirmation: 'tr@iner123',
                    bio: 'Alex Morgan is a soccer player and olympic gold medalist. She is the 6th and youngest US soccer player to score 20 goals in a year. US soccer athlete of the year and FIFA world player of year finalist. See profile')

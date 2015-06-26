@@ -33,6 +33,7 @@ class Ability
 
     can :read, Program
     can :read, Review
+    can :read, :trainer
 
     send @user.role
   end
@@ -43,6 +44,7 @@ class Ability
 
   def trainer
     can :manage, User, id: @user.id
+    can :manage, :trainer
     can :manage, Program, trainer_id: @user.id
     can :create, Program
   end

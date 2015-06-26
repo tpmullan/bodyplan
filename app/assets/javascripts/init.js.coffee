@@ -2,7 +2,7 @@
 $(document).ready ->
 
   $.ajaxSetup headers: 'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-
+  setAutoSize()
 
   # --------------------------------------------------------------------------------------------------------------------
   # setting up bootstrap popovers

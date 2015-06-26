@@ -13,8 +13,10 @@
   </div>
   <div class="programs">
     <div class="container individual-programs">
-      <h3>Purchased Programs</h3>
-      <%= render :partial => "subscriptions", :collection => @subscriptions %>
+      <% unless @subscriptions.empty? %>
+        <h3>Purchased Programs</h3>
+        <%= render :partial => "subscriptions", :collection => @subscriptions %>
+      <% end %>
     </div>
   </div>
     <div class="container-fluid ">
