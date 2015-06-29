@@ -1,0 +1,25 @@
+<div class="container-fluid background-color">
+  <div class="pad-40"></div>
+  <div class="container"> 
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 profile-settings">
+      <div class="col-md-3 profile-settings-menu ">
+        <%= image_tag avatar_url(@user, 120), alt: '', class: "img-circle avatar avatar-original text-center", size: '120' %>
+        <ul class="nav nav-stacked" role="tablist" id="myTab">
+          <li role="presentation" class="active"><a href="#credit" aria-controls="credit" role="tab" data-toggle="tab">Update Credit Card</a></li>
+        </ul>             
+      </div>
+      <div class="col-md-9 profile-settings-content">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="credit">
+            <h1>Update your credit card info.</h1>
+            <%= render 'credit_cards/form' %>
+          </div>
+        <div class="col-md-12">
+            <%= link_to '<i class="glyphicon glyphicon-arrow-left"></i> Profile'.html_safe, @user, class: 'btn btn-default pull-right' %>
+        </div>  
+        <div class="pad-40"></div>
+      </div>  
+    </div>
+  </div>
+  <div class="pad-40"></div>
+</div>

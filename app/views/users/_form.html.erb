@@ -3,7 +3,7 @@
   <%= f.input :first_name %>
   <%= f.input :last_name %>
   <%= f.input :sex, label: 'Gender', :include_blank => false, :collection =>  { 'Male' => 'male', 'Female' => 'female' }  %>
-  <%= f.input :bio, as: :text %>
+  <%= f.input :bio, input_html: { class: 'autosize' }, as: :text %>
   <%= f.input :website %>
   <h1>Private Information</h1>
   <%= f.input :email, placeholder: 'user@domain.com' %>
